@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="doAn.css">
+    <link rel="stylesheet" href="base.css">
+    <link rel="stylesheet" href="grid.css">
+    <link rel="stylesheet" href="responsive.css">
+    <title>Vuon thong minh - Tuan</title>
+    <style>
+        .switch {
+            /* margin-top: -90px; */
+            top: 20px;
+            right:12px;
+            position: relative;
+            display: inline-block;
+            width: 40px;
+            height: 20px;
+        }
+
+        .switch1 {
+            top: -23px;
+            right:4.2%;
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 10px;
+        }
+
+        .switch2 {
+            top: -23px;
+            right:4.2%;
+            position: relative;
+            display: inline-block;
+            width: 20px;
+            height: 10px;
+        }
+
+        .switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .switch1 input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .switch2 input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;  
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 16px;
+            width: 16px;
+            left: 4px;
+            bottom: 2.015px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        .slider1 {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 17px;  
+        }
+
+        .slider1:before {
+            position: absolute;
+            content: "";
+            height: 8px;
+            width: 8px;
+            left: 2px;
+            bottom: 1px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        .slider2 {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 17px;
+           
+        }
+
+        .slider2:before {
+            position: absolute;
+            content: "";
+            height: 8px;
+            width: 8px;
+            left: 2px;
+            bottom: 1px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(18px);
+        }
+
+        .autobutton__header, .autobutton__text--para {
+            transition: color 0.4s;
+        }
+
+.activated .autobutton__header {
+    color: var(--texthead-hover);
+    /* color: red */
+}
+
+.activated .autobutton__text--para {
+    color: var(--text-hover);
+}
+
+.servobutton__header, .servobutton__text--para {
+    transition: color 0.4s;
+}
+
+.activated .servobutton__header {
+    color: var(--texthead-hover);
+}
+
+.activated .servobutton__text--para {
+    color: var(--text-hover);
+}
+
+.pumpbutton__header, .pumpbutton__text--para {
+    transition: color 0.4s;
+}
+
+.activated .pumpbutton__header {
+    color: var(--texthead-hover);
+}
+
+.activated .pumpbutton__text--para {
+    color: var(--text-hover);
+}
+
+        input:checked + .slider1 {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider1:before {
+            transform: translateX(9px);
+        }
+
+        input:checked + .slider2 {
+            background-color: #2196F3;
+        }
+
+        input:checked + .slider2:before {
+            transform: translateX(9px);
+        }
+
+        input:disabled + .slider, input:disabled + .slider1, input:disabled + .slider2 {
+            cursor: not-allowed;
+        }
+
+    .clock {
+      font-size: 48px;
+      color: var(--text-color);
+      background: var(--primary-color);
+      padding: 16.5px;
+      border-radius: 10px;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    .move-up {
+      animation: moveUpDown 0.5s infinite alternate;
+    }
+
+    @keyframes moveUpDown {
+      from {
+        transform: translateY(0);
+      }
+      to {
+        transform: translateY(-20px);
+      }
+    }
+
+    .rotate {
+      animation: rotate360 2s linear infinite;
+    }
+
+    @keyframes rotate360 {
+      from {
+        transform: rotate(0deg);
+      }
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    </style>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid wide">
+                <nav class="header__navbar hide-on-mobile-tablet ">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
+                            Ủng hộ chúng tôi
+                        <div class="header__qr">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QR_Code" class="header__qr-img">
+                                <h1>HỒ ANH TUẤN</h1>
+                                <h2>3147734404</h2>
+                                <h3>Ngân hàng BIDV</h3>
+                           
+                        </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-item--no-pointer">Kết nối</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class= "header__navbar-icon fab fa-facebook-f"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class= "header__navbar-icon fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-help">
+                            <a class="header__navbar-item-link" href="">
+                                <i class= "header__navber-icon header__navbar-item--has-help fas fa-question-circle"></i>
+                                Trợ giúp
+                            </a>
+                            <div class="header__help">
+                                <img class="header__help-img" src="https://png.pngtree.com/png-clipart/20230823/original/pngtree-refresh-reload-icon-vector-design-picture-image_8199373.png" alt="">
+                                <p>Hãy thử lải lại trang !</p>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a class="header__navbar-item header__navbar-item--strong header__navbar-item--separate" href="#" id="regisBtn">Đăng ký</a>
+                            <a class="header__navbar-item header__navbar-item--strong" href="#" id="loginBtn">Đăng nhập</a>
+                            
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="tieude">
+                    <div class="clock1 hide-on-pc" id="clock1"></div>
+                    <span class="name"><strong> <font  size="100" color="white">Smart<font size="100" color="#79879b">Garden</font></font></strong></span>
+                    <div class="user hide-on-pc">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTZYV2ecDvxsERGUo1LkNrLtFzx1DnrtAH6eQ&s" alt="" class="header__navbar-user-img">
+                         <span class="header__navbar-user-name">Anh Tuan</span>
+                    </div>
+                </div>
+            </div>
+
+            <ul class="header__sort-bar">
+                <li class="header__sort-item">
+                    <a href="./index (2).html" class="header__sort-link">Nhiệt độ</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="./index (5).html" class="header__sort-link">Độ ẩm</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="./index (3).html" class="header__sort-link">Lượng mưa</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="./index (4).html" class="header__sort-link">Độ ẩm đất</a>
+                </li>
+                <li class="header__sort-item">
+                    <a href="" class="header__sort-link">Sấm sét</a>
+                </li>
+            </ul>
+        </header>
+
+        <div class="app__container">
+            <div class="grid wide">
+                <div class="row">
+                    <div class="col p-2 t-0 m-0">
+                        <nav class="category">
+                            <h3 class="category__heading">
+                                <i class="category__heading-icon fas fa-bars"></i>
+                                My Garden
+                            </h3>
+            
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="" class="category-item__link-tongquan">
+                                        <i class="category-item-icon fas fa-chart-pie"></i>
+                                        Tổng quan</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="./index (2).html" class="category-item__link">
+                                        <i class="category-item-icon fas fa-thermometer-half"></i>
+                                        Nhiệt độ</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="./index (5).html" class="category-item__link">
+                                        <i class="category-item-icon fas fa-tint"></i>
+                                        Độ ẩm</a>
+                                </li>
+
+                                <li class="category-item">
+                                    <a href="./index (3).html" class="category-item__link">
+                                        <i class="category-item-icon fas fa-cloud-rain icon"></i>
+                                        Lượng mưa</a>
+                                </li>
+
+                                <li class="category-item">
+                                    <a href="./index (4).html" class="category-item__link">
+                                        <i class="category-item-icon fas fa-leaf icon"></i>
+                                        Độ ẩm đất</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                    
+                    <div class="col p-10 t-12 m-12">
+                        <div class="home-product">
+                            <div class="row">
+                                <div class="col p-6-10 t-0">
+                                    <div class="home-product-camera">
+                                        <span class="home-product-camera__text">CAMERA</span>
+                                        <img class="home-product-camera-img" src="https://www.analyticssteps.com/backend/media/thumbnail/6227203/3126343_1690835715_The%20Smart%20GardeningArtboard%201.jpg" alt="" >   
+                                    </div>
+                                </div>
+                                 
+                                <div class="col p-4-10 t-12 m-12">
+                                    <div class="mode">
+                                        <div class="autobutton" >
+                                            <div class="autobutton__icon">
+                                                <img class="autobutton__img" src="https://cdn-icons-png.flaticon.com/512/8101/8101857.png" alt="">
+                                                
+                                            </div>
+                                                
+                                            <div class="autobutton__body">
+                                                <h3 class="autobutton__header" id="autoHeaderr" >
+                                                    AUTOMODE 
+                                                </h3>
+                                                <p class="autobutton__text--para" id="autoPara">
+                                                    Kích hoạt để chạy tự động
+                                                </p>                     
+                                            </div>
+                                                
+                                            <label class="switch" id="autoSwitchLabel" >
+                                                <input type="checkbox" id="autoSwitch">
+                                                <span class="slider"></span>
+                                                <div id="Automode"></div>
+                                            </label>
+    
+                                                    
+                                                  
+                                        </div>
+                                
+                                        <div class="handbutton">
+                                            <div class="row no-gutters">
+                                                <div class="col p-6 t-6 m-6 ">
+                                                    <div class="servobutton " >
+                                                        <div class="servobutton__icon">
+                                                            <img class="servobutton__img" src="https://cdn-icons-png.freepik.com/512/6276/6276775.png" alt="">
+                                                        </div>
+                                                                        
+                                                        <div class="servobutton__body">
+                                                            <h3 class="servobutton__header" id="servoHeaderr">
+                                                                SERVO 
+                                                            </h3>
+                                                            <p class="servobutton__text--para" id="servoPara" >
+                                                                Bật/ tắt Servo
+                                                            </p>                   
+                                                        </div>
+                                                                        
+                                                        <label class="switch1" id="autoSwitchLabel1" >
+                                                            <input type="checkbox" id="autoSwitch1">
+                                                            <span class="slider1"></span>
+                                                            <div id="Servo"></div>
+                                                        </label>                                                                                                                                              
+                                                    </div>
+                                                </div>
+                                                                
+                                                <div class="col p-6 t-6 m-6 no-gutter ">
+                                                    <div class="pumpbutton " >
+                                                        <div class="pumpbutton__icon">
+                                                            <img class="pumpbutton__img" src="https://cdn-icons-png.freepik.com/512/416/416223.png" alt="">
+                                                        </div>
+                                                                        
+                                                        <div class="pumpbutton__body">
+                                                            <h3 class="pumpbutton__header" id="pumpHeaderr">
+                                                                PUMP 
+                                                            </h3>
+                                                            <p class="pumpbutton__text--para" id="pumpPara">
+                                                                Bật/ tắt Pump
+                                                            </p>                      
+                                                        </div>
+                                                                        
+                                                        <label class="switch2" id="autoSwitchLabel2" >
+                                                            <input type="checkbox" id="autoSwitch2">
+                                                            <span class="slider2"></span>
+                                                            <div id="Pump"></div>
+                                                        </label>                       
+                                                    </div>
+                                                </div>
+                                            </div>                          
+                                        </div>
+
+                                        <div class="clock hide-on-mobile-tablet" id="clock"></div>
+                                    </div>              
+                                </div>                   
+                            </div> 
+                            <div class="row">
+                                
+                                <div class="col p-2-4 t-2-5 t-o-05 m-4">
+                                    <!-- Product item -->
+                                    <div class="home-product-item">
+                                       <img class="home-product-item__img" src="https://img.pikbest.com/origin/09/25/27/12upIkbEsTvGE.png!sw800" alt="">
+                                        <h4 class="home-product-item__name">
+                                            Nhiệt độ: 
+                                            <div id="Nhietdo"></div>
+                                        </h4>
+                                        
+                                    </div> 
+                                </div>
+
+                                <!-- Bố cục bất đối xứng trên tablet -->
+                                <div class="col p-2-4 t-2 m-4 hide-on-pc">
+                                   
+                                </div>
+                                <!--  -->
+
+
+                                <div class="col p-2-4 t-2-5 m-4">
+                                    <!-- Product item -->
+                                    <div class="home-product-item">
+                                       <img class="home-product-item__img" src="https://cdn-icons-png.freepik.com/512/6393/6393411.png" alt="">
+                                        <h4 class="home-product-item__name">
+                                            Độ ẩm: 
+                                            <div id="Doam"></div>
+                                        </h4>
+                                    </div> 
+                                </div>
+
+                                <!-- Bố cục bất đối xứng trên tablet --> 
+                                 <div class="col p-2-4 t-2 m-4 hide-on-pc">
+                                   
+                                 </div>
+                                 <!--  -->
+
+                                <div class="col p-2-4 t-2-5 m-4">
+                                    <!-- Product item -->
+                                    <div class="home-product-item">
+                                       <img class="home-product-item__img" src="https://cdn-icons-png.freepik.com/512/7813/7813185.png" alt="">
+                                        <h4 class="home-product-item__name">
+                                            Lượng mưa:
+                                            <div id="Luongmua"></div>
+                                        </h4>
+                                    </div> 
+                                </div>
+
+                                <div class="col p-2-4 t-2-5 t-o-04 m-4 hide-on-pc">
+                                    <!-- Product item -->
+                                
+                                </div>
+
+                                <div class="col p-2-4 t-2-5  m-4">
+                                    <!-- Product item -->
+                                    <div class="home-product-item">
+                                       <img class="home-product-item__img" src="https://cdn-icons-png.freepik.com/512/2591/2591974.png" alt="">
+                                        <h4 class="home-product-item__name">
+                                            Độ ẩm đất:
+                                            <div id="Doamdat"></div>
+                                        </h4>
+                                    </div> 
+                                </div>
+
+                                 <!-- Bố cục bất đối xứng trên tablet --> 
+                                 <div class="col p-2-4 t-2 m-4 hide-on-pc">
+                                   
+                                 </div>
+                                 <!--  -->
+
+                                <div class="col p-2-4 t-2-5 m-4">
+                                   
+                                    <div class="home-product-item">
+                                       <img class="home-product-item__img" src="https://cdn-icons-png.freepik.com/512/9755/9755354.png" alt="">
+                                        <h4 class="home-product-item__name">
+                                            Sấm chớp
+                                            <div id="Doamdatt">0</div>
+                                            
+                                        </h4>
+                                    </div> 
+                                </div>      
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="grid wide">
+                <div class="footer__bottom">
+                    <div class="grid wide">
+                        <p class="footer__text"> © Bản quyền thuộc về Anh Tuấn và Song Toàn</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+   
+   <script>
+  
+    var firebaseConfig = {
+      apiKey: "AIzaSyBiWi_4pL0orP5JnGJsPojNK-SGKUCHWZg",
+      authDomain: "fir-demo-d0395.firebaseapp.com",
+      databaseURL: "https://fir-demo-d0395-default-rtdb.firebaseio.com",
+      projectId: "fir-demo-d0395",
+      storageBucket: "fir-demo-d0395.appspot.com",
+      messagingSenderId: "1034195248102",
+      appId: "1:1034195248102:web:fd136532c73c36dbe72c27",
+      measurementId: "G-W6C3F4H7BP"
+    };
+  
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+  </script>
+
+    <script src="demo.js"></script>
+</body>
+</html>

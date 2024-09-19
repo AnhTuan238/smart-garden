@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="doAn.css">
+    <link rel="stylesheet" href="base.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <title>Document</title>
+</head>
+<body>
+    <div class="app">
+        <header class="header">
+            <div class="grid">
+                <nav class="header__navbar">
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-qr header__navbar-item--separate">
+                            Ủng hộ chúng tôi
+                        <div class="header__qr">
+                            <img src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg" alt="QR_Code" class="header__qr-img">
+                                <h1>HỒ ANH TUẤN</h1>
+                                <h2>3147734404</h2>
+                                <h3>Ngân hàng BIDV</h3>
+                        </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <span class="header__navbar-item--no-pointer">Kết nối</span>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class= "header__navbar-icon fab fa-facebook-f"></i>
+                            </a>
+                            <a href="" class="header__navbar-icon-link">
+                                <i class= "header__navbar-icon fab fa-instagram"></i>
+                            </a>
+                        </li>
+                    </ul>
+    
+                    <ul class="header__navbar-list">
+                        <li class="header__navbar-item header__navbar-item--has-help">
+                            <a class="header__navbar-item-link" href="">
+                                <i class= "header__navber-icon header__navbar-item--has-help fas fa-question-circle"></i>
+                                Trợ giúp
+                            </a>
+                            <div class="header__help">
+                                <img class="header__help-img" src="https://png.pngtree.com/png-clipart/20230823/original/pngtree-refresh-reload-icon-vector-design-picture-image_8199373.png" alt="">
+                                <p>Hãy thử lải lại trang !</p>
+                            </div>
+                        </li>
+                        <li class="header__navbar-item">
+                            <a class="header__navbar-item header__navbar-item--strong header__navbar-item--separate" href="">Đăng ký</a>
+                            <a class="header__navbar-item header__navbar-item--strong" href="">Đăng nhập</a>
+                            
+                        </li>
+                    </ul>
+                </nav>
+                <h4> <strong> <font size="100" color="white">Smart<font size="100" color="#79879b">Garden</font></font></strong></h4>
+            </div>
+        </header>
+
+        <div class="app__container">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__column-2">
+                        <nav class="category">
+                            <h3 class="category__heading">
+                                <i class="category__heading-icon fas fa-bars"></i>
+                                My Garden</h3>
+            
+                            <ul class="category-list">
+                                <li class="category-item">
+                                    <a href="index.html" class="category-item__link">
+                                        <i class="category-item-icon fas fa-chart-pie"></i>
+                                        Tổng quan</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="./index (2).html" class="category-item__link">
+                                        <i class="category-item-icon fas fa-thermometer-half"></i>
+                                        Nhiệt độ</a>
+                                </li>
+                                <li class="category-item">
+                                    <a href="./index (5).html" class="category-item__link-doam">
+                                        <i class="category-item-icon fas fa-tint"></i>
+                                        Độ ẩm</a>
+                                </li>
+
+                                <li class="category-item">
+                                    <a href="./index (3).html" class="category-item__link">
+                                        <i class="category-item-icon fas fa-cloud-rain icon"></i>
+                                        Lượng mưa</a>
+                                </li>
+
+                                <li class="category-item">
+                                    <a href="./index (4).html" class="category-item__link">
+                                        <i class="category-item-icon fas fa-leaf icon"></i>
+                                        Độ ẩm đất</a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+    
+                    <div class="grid__column-10">
+                        <div class="home-product">
+                            <div class="home-product-camera">
+                                <canvas class="home-product-chart" id="myChart" width="100%" height="100%" ></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer">
+            <div class="grid">
+                <div class="grid__row">
+                    <div class="grid__column-4">
+                        <h3 class="footer__heading" style="color: #fff;">Giảng viên hướng dẫn</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+             
+                                <a href="https://www.facebook.com/thienkumoh406" class="footer-item__link">
+                                    <i class= "footer-item-icon fab fa-facebook-f"></i>
+                                    Facebook</a>
+                            </li>
+                            <li class="footer-item">
+                
+                                <a href="https://sites.google.com/site/thienhuynhthe/home" class="footer-item__link">
+                                    <i class="footer-item-icon fab fa-google fa-1x"></i>
+                                    Tiểu sử</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid__column-5">
+                        <h3 class="footer__heading_center" style="color: #fff;">Song Toàn</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="https://www.facebook.com/toantlsvn" class="footer-item__link">
+                                    <i class= "footer-item-icon fab fa-facebook-f"></i>
+                                    Facebook</a>
+                            </li>
+                            <li class="footer-item">
+          
+                                <a href="https://www.youtube.com/@SONGTOANmusic" class="footer-item__link">
+                                    
+                                    <i class="footer-item-icon fab fa-youtube fa-1x"></i>Youtube</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="grid__column-6">
+                        <h3 class="footer__heading_end" style="color: #fff;">Anh Tuấn</h3>
+                        <ul class="footer-list">
+                            <li class="footer-item">
+                                <a href="https://www.facebook.com/profile.php?id=100034723364778" class="footer-item__link">
+                                    <i class= "footer-item-icon fab fa-facebook-f"></i>
+                                    Facebook</a>
+                            </li>
+                            <li class="footer-item">
+                                <a href="https://www.youtube.com/channel/UCLY7Xm036Elvh13pduozj2Q" class="footer-item__link">
+                                    <i class="footer-item-icon fab fa-youtube fa-1x"></i>
+                                    Youtube</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <div class="grid">
+                        <p class="footer__text"> © Bản quyền thuộc về Song Toàn và Anh Tuấn</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-app.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-database.js"></script>
+   <script src="https://www.gstatic.com/firebasejs/8.2.9/firebase-analytics.js"></script>
+
+   <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyBiWi_4pL0orP5JnGJsPojNK-SGKUCHWZg",
+      authDomain: "fir-demo-d0395.firebaseapp.com",
+      databaseURL: "https://fir-demo-d0395-default-rtdb.firebaseio.com",
+      projectId: "fir-demo-d0395",
+      storageBucket: "fir-demo-d0395.appspot.com",
+      messagingSenderId: "1034195248102",
+      appId: "1:1034195248102:web:fd136532c73c36dbe72c27",
+      measurementId: "G-W6C3F4H7BP"
+    };
+
+   // Khởi tạo Firebase
+   firebase.initializeApp(firebaseConfig);
+    firebase.analytics();
+
+    var valueTemp = firebase.database().ref('DoAn').child('Humidity');
+    var labels = [];
+    var data = [];
+    var readCount = 0; 
+
+    valueTemp.on('value', snap => {
+      var temp = snap.val();
+      data.push(temp);
+      labels.push(++readCount); 
+
+      // Cập nhật dữ liệu vào Local Storage
+      localStorage.setItem('chartLabels', JSON.stringify(labels));
+      localStorage.setItem('chartData', JSON.stringify(data));
+
+      // Cập nhật dữ liệu vào Firebase
+  firebase.database().ref('chartData').set({
+    labels: labels,
+    data: data
+  });
+
+  firebase.database().ref('chartData').once('value', snapshot => {
+  if (snapshot.exists()) {
+    var chartData = snapshot.val();
+    labels = chartData.labels || [];
+    data = chartData.data || [];
+
+    // Cập nhật biểu đồ với dữ liệu từ Firebase
+    myChart.data.labels = labels;
+    myChart.data.datasets[0].data = data;
+    myChart.update();
+  }
+});
+
+
+      // Cập nhật biểu đồ
+      myChart.update();
+    });
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: labels,
+        datasets: [{
+          label: 'Độ ẩm',
+          data: data,
+          fill: false,
+        borderColor: 'blue',
+          tension: 0.1, 
+        }]
+      },
+      options: {
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Số lần đọc',
+              color: '#fff'
+            },
+            ticks: {
+              color: '#fff'
+            }
+          },
+          y: {
+            title: {
+              display: true,
+              text: 'Độ ẩm (%)',
+              color: '#fff'
+            },
+            ticks: {
+              color: '#fff'
+            }
+        }
+        },
+        
+        plugins: {
+          legend: {
+            labels: {
+              color: '#fff'
+            }
+          }
+        }
+      }
+    });
+    window.onload = function() {
+      var storedLabels = localStorage.getItem('chartLabels');
+      var storedData = localStorage.getItem('chartData');
+
+      if (storedLabels && storedData) {
+        labels = JSON.parse(storedLabels);
+        data = JSON.parse(storedData);
+        readCount = labels.length; 
+
+        // Cập nhật biểu đồ với dữ liệu từ Local Storage
+        myChart.data.labels = labels;
+        myChart.data.datasets[0].data = data;
+        myChart.update();
+      }
+    };
+  </script>
+    <script src="demo.js"></script>
+</body>
+</html>
